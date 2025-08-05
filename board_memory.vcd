@@ -1,0 +1,101 @@
+$date
+	Wed Aug 06 02:39:04 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module board_memory_tb $end
+$var wire 4 ! data_out [3:0] $end
+$var reg 7 " cell_index [6:0] $end
+$var reg 1 # clk $end
+$var reg 4 $ data_in [3:0] $end
+$var reg 1 % read_en $end
+$var reg 1 & rst $end
+$var reg 1 ' write_en $end
+$scope module uut $end
+$var wire 7 ( cell_index [6:0] $end
+$var wire 1 # clk $end
+$var wire 4 ) data_in [3:0] $end
+$var wire 1 % read_en $end
+$var wire 1 & rst $end
+$var wire 1 ' write_en $end
+$var reg 4 * data_out [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx *
+bx )
+bx (
+x'
+1&
+x%
+bx $
+0#
+bx "
+bx !
+$end
+#5
+b0 !
+b0 *
+1#
+#8
+bx !
+bx *
+0&
+#10
+0#
+#11
+0%
+b11 "
+b11 (
+b1 $
+b1 )
+1'
+#15
+1#
+#20
+0#
+#21
+b10111 "
+b10111 (
+b110 $
+b110 )
+#25
+1#
+#30
+0#
+#31
+b11110 "
+b11110 (
+b100 $
+b100 )
+#35
+1#
+#40
+0#
+#41
+1%
+0'
+#45
+b100 !
+b100 *
+1#
+#50
+0#
+#55
+1#
+#60
+0#
+#65
+1#
+#70
+0#
+#71
