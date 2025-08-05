@@ -14,7 +14,11 @@ always @(posedge clk or negedge rst) begin
     cell_index <= 7'b0000000;
     data_in <= 4'b0000;
   end else begin
-    
+    if (write_en) begin
+        board[cell_index] <= data_in;
+    end else begin
+        data_out <= board[cell_index]; 
+    end
   end
 end
     
