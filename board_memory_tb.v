@@ -22,13 +22,17 @@ initial begin
     rst = 1;
     #8 rst = 0;
 
-    #3 write_en = 1; data_in = 1; cell_index = 3; read_en = 0;
-    #10 write_en = 1; data_in = 6; cell_index = 23; read_en = 0;
-    #10 write_en = 1; data_in = 4; cell_index = 30; read_en = 0;
+    // Write Phase
+    #2  write_en = 1; data_in = 1; cell_index = 3;
+    #10 write_en = 1; data_in = 6; cell_index = 23;
+    #10 write_en = 1; data_in = 4; cell_index = 30;
+    #10 write_en = 0;
 
-    #10 write_en = 0; read_en = 1;
-    #10 write_en = 0; read_en = 1;
-    #10 write_en = 0; read_en = 1;
+    // Read Phase
+    #5  read_en = 1; cell_index = 3;
+    #10 read_en = 1; cell_index = 23;
+    #10 read_en = 1; cell_index = 30;
     #10 $finish;
+    
 end
 endmodule
