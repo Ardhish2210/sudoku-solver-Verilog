@@ -9,10 +9,11 @@ reg [3:0] board [0:80]; // 9x9 Sudoku Solver
 
 always @(posedge clk or negedge rst) begin
   if(rst) begin
-    read_en <= 0;
-    write_en <=0;
-    cell_index <= 7'b0000000;
-    data_in <= 4'b0000;
+    // read_en <= 0;
+    // write_en <=0;
+    // cell_index <= 7'b0000000;
+    // data_in <= 4'b0000;
+    data_out <= 4'b0000;
   end else begin
     if (write_en) begin
         board[cell_index] <= data_in;
