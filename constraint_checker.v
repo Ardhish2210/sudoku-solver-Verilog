@@ -3,23 +3,53 @@ module constraint_checker (num_to_place, cell_index, board, valid);
 input [3:0] num_to_place;
 input [6:0] cell_index;
 input [3:0] board [0:80];
-output valid;     
+output reg valid;     
 
-assign row = cell_index/9;
-assign col = (cell_index % 9);
+integer row, col;
+integer index;
+
 
 always @(*) begin
-    for (integer i = 0; i < 9; i = i + 1) begin // i = ROW
-        for(integer j = 0; j < 9; j = j + 1) begin // j = COLUMN
-            integer index = i * 9 + j;
-            if((board[index] == num_to_place) && (index != cell_index)) begin
+
+    row = (cell_index) / 9;
+    col = (cell_index) % 9;
+
+//  For ROW checking
+    for (integer i = 0; i < 9; i = i + 1) begin
+        index = row*9 + 1;
+        if((board[index] == num_to_place) && index!= cell_index) begin
+            valid = 0;
+        end
+    end
+
+//  For COLUMN checking
+    for (integer i = 0; i < 9; i = i + 1) begin
+        index = i*9 + col;
+        if((board[index] == num_to_place) && index!= cell_index) begin
+            valid = 0;
+        end
+    end
+
+    start_row = (row / 3)*3;
+    start_col = (col / 3)*3;
+
+//  For 3x3 box checking
+    for (i = start_row; i = start_row + 3; i = i + 1) begin
+        for (j = start_col; j = start_col + 3; j = j + 1) begin
+            index = i*9 + j;
+            if((board[index] == num_to_place) && index!= cell_index) begin
                 valid = 0;
-            end else begin
-                valid = 1;
-            end
         end
     end
 end
+
+
+
+
+
+
+end
+
 
 
 endmodule
