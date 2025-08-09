@@ -15,23 +15,23 @@ always @(*) begin
 
     row = (cell_index) / 9;
     col = (cell_index) % 9;
-    valid = 1;
+    valid = 1'b1;
 
 //  For ROW checking
-    for (integer i = 0; i < 9; i = i + 1) begin
+    for (i = 0; i < 9; i = i + 1) begin
         index = row*9 + i;
         cell_val = board_flat[index*4 +: 4];
         if((cell_val == num_to_place) && index!= cell_index) begin
-            valid = 0;
+            valid = 1'b0;
         end
     end
 
 //  For COLUMN checking
-    for (integer i = 0; i < 9; i = i + 1) begin
+    for (i = 0; i < 9; i = i + 1) begin
         index = i*9 + col;
         cell_val = board_flat[(index*4) +: 4];
         if((cell_val == num_to_place) && index!= cell_index) begin
-            valid = 0;
+            valid = 1'b0;
         end
     end
 
@@ -44,7 +44,7 @@ always @(*) begin
             index = i*9 + j;
             cell_val = board_flat[(index*4) +: 4];
             if((cell_val == num_to_place) && index!= cell_index) begin
-                valid = 0;
+                valid = 1'b0;
         end
     end
 end

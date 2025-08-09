@@ -19,23 +19,27 @@ initial begin
     #5 board_flat = {324{1'b0}}; 
     num_to_place = 4'd5; 
     cell_index = 7'd0; 
+    #1;
     print_board();
 
     #5 board_flat[4*3 +: 4] = 4'd5; 
     num_to_place = 4'd5; 
     cell_index = 7'd0; 
+    #1;
     print_board();
 
     #5 board_flat = {324{1'b0}};
     board_flat[4*(0 + 9*2) +: 4] = 4'd5;
     num_to_place = 4'd5; 
     cell_index = 7'd0; 
+    #1;
     print_board();
 
     #5 board_flat = {324{1'b0}};
     board_flat[4*(1 + 9*1) +: 4] = 4'd5;
     num_to_place = 4'd5; 
     cell_index = 7'd0; 
+    #1;
     print_board();
 
     #10 $finish;
