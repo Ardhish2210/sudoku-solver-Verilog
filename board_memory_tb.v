@@ -7,8 +7,9 @@ reg clk, rst, read_en, write_en;
 reg [6:0] cell_index;
 reg [3:0] data_in;
 wire [3:0] data_out;
+wire [323:0] board_flat;
 
-board_memory uut (clk, rst, read_en, write_en, cell_index, data_in, data_out);
+board_memory uut (clk, rst, read_en, write_en, cell_index, data_in, data_out, board_flat);
 
 always #5 clk = ~clk;
 
