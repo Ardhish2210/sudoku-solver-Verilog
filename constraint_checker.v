@@ -1,9 +1,10 @@
-module constraint_checker (num_to_place, cell_index, valid);
+module constraint_checker (num_to_place, cell_index, valid, board_flat);
 
 input [3:0] num_to_place;
 input [6:0] cell_index;
-reg [3:0] board [0:80];
+input [323:0] board_flat;
 output reg valid;     
+reg [3:0] cell_val;
 
 integer row, col;
 integer index;
@@ -14,11 +15,13 @@ always @(*) begin
 
     row = (cell_index) / 9;
     col = (cell_index) % 9;
+    valid = 1;
 
 //  For ROW checking
     for (integer i = 0; i < 9; i = i + 1) begin
         index = row*9 + i;
-        if((board[index] == num_to_place) && index!= cell_index) begin
+        cell_val = board_flat[index*4 +: 4];
+        if((cell_val == num_to_place) && index!= cell_index) begin
             valid = 0;
         end
     end
@@ -26,7 +29,8 @@ always @(*) begin
 //  For COLUMN checking
     for (integer i = 0; i < 9; i = i + 1) begin
         index = i*9 + col;
-        if((board[index] == num_to_place) && index!= cell_index) begin
+        cell_val = board_flat[(index*4) +: 4];
+        if((cell_val == num_to_place) && index!= cell_index) begin
             valid = 0;
         end
     end
@@ -38,19 +42,11 @@ always @(*) begin
     for (i = start_row; i < start_row + 3; i = i + 1) begin
         for (j = start_col; j < start_col + 3; j = j + 1) begin
             index = i*9 + j;
-            if((board[index] == num_to_place) && index!= cell_index) begin
+            cell_val = board_flat[(index*4) +: 4];
+            if((cell_val == num_to_place) && index!= cell_index) begin
                 valid = 0;
         end
     end
 end
-
-
-
-
-
-
 end
-
-
-
 endmodule
