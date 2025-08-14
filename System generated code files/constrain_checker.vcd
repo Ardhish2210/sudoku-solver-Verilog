@@ -1,0 +1,110 @@
+$date
+	Wed Aug 13 17:09:29 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module constraint_checker_tb $end
+$var wire 1 ! valid $end
+$var reg 324 " board_flat [323:0] $end
+$var reg 7 # cell_index [6:0] $end
+$var reg 4 $ num_to_place [3:0] $end
+$var integer 32 % c [31:0] $end
+$var integer 32 & r [31:0] $end
+$scope module uut $end
+$var wire 324 ' board_flat [323:0] $end
+$var wire 7 ( cell_index [6:0] $end
+$var wire 4 ) num_to_place [3:0] $end
+$var reg 4 * cell_val [3:0] $end
+$var reg 1 ! valid $end
+$var integer 32 + col [31:0] $end
+$var integer 32 , i [31:0] $end
+$var integer 32 - index [31:0] $end
+$var integer 32 . j [31:0] $end
+$var integer 32 / row [31:0] $end
+$var integer 32 0 start_col [31:0] $end
+$var integer 32 1 start_row [31:0] $end
+$upscope $end
+$scope task print_board $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx 1
+bx 0
+bx /
+bx .
+bx -
+bx ,
+bx +
+bx *
+bx )
+bx (
+bx '
+bx &
+bx %
+bx $
+bx #
+bx "
+x!
+$end
+#5
+b11 .
+b0 0
+b0 1
+b0 *
+b10100 -
+b11 ,
+1!
+b0 +
+b0 /
+b0 #
+b0 (
+b101 $
+b101 )
+b0 "
+b0 '
+#6
+b1001 %
+b1001 &
+#11
+b11 .
+0!
+b0 *
+b10100 -
+b11 ,
+b101000000000000 "
+b101000000000000 '
+#12
+b1001 %
+b1001 &
+#17
+b11 .
+b0 *
+b10100 -
+b11 ,
+0!
+b101000000000000000000000000000000000000000000000000000000000000000000000000 "
+b101000000000000000000000000000000000000000000000000000000000000000000000000 '
+#18
+b1001 %
+b1001 &
+#23
+b0 *
+b11 .
+b10100 -
+b11 ,
+0!
+b1010000000000000000000000000000000000000000 "
+b1010000000000000000000000000000000000000000 '
+#24
+b1001 %
+b1001 &
+#34
