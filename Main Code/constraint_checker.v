@@ -14,7 +14,7 @@ integer i, j;
 always @(*) begin
     row = (cell_index) / 9;
     col = (cell_index) % 9;
-    valid = 1'b1;
+    valid = 1;
 
     // Row checking
     for (i = 0; i < 9; i = i + 1) begin
