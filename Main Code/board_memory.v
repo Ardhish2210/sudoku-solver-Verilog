@@ -22,7 +22,7 @@ always @(posedge clk) begin
         data_out <= board[cell_index];
     end
 end
-  
+
 genvar index;
 generate 
     for(index = 0; index < 81; index = index + 1) begin: flatten_loop
