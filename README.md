@@ -1,6 +1,7 @@
 # 🧩 Sudoku Solver in Verilog
 
 > **Hardware meets Sudoku!** A complete digital logic implementation that solves 9x9 Sudoku puzzles using backtracking algorithm in pure Verilog HDL.
+
 ## 🚀 What's Inside
 - [✨ Features](#-features)
 - [🏗️ Architecture](#️-architecture)
